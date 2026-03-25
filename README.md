@@ -4,6 +4,13 @@ This project has:
 - `backend/` -> PHP API (MySQL + Redis + MongoDB)
 - `frontend/` -> static HTML/CSS/JS app
 
+## Free Hosting and Deployment
+
+Use `DEPLOY_FREE.md` for a full step-by-step deployment guide:
+- Frontend: Netlify (free)
+- Backend: Render (free)
+- Databases: free-tier providers for MySQL, Redis, and MongoDB
+
 ## Prerequisites (Windows)
 
 Install:

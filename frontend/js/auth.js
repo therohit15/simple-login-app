@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-    const API_BASE = "http://127.0.0.1:8000";
+    const API_BASE = window.APP_CONFIG?.API_BASE || "http://127.0.0.1:8000";
 
     const sessionKey = localStorage.getItem("session_key");
     if (sessionKey) {
