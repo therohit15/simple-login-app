@@ -38,7 +38,8 @@ $(document).ready(function () {
             },
             error: function (xhr) {
                 const res = xhr.responseJSON;
-                alert(res?.message || "Signup failed");
+                const fallback = xhr.responseText || `Signup failed (HTTP ${xhr.status || 0})`;
+                alert(res?.message || fallback);
             }
         });
     });
@@ -70,7 +71,8 @@ $(document).ready(function () {
             },
             error: function (xhr) {
                 const res = xhr.responseJSON;
-                alert(res?.message || "Login failed");
+                const fallback = xhr.responseText || `Login failed (HTTP ${xhr.status || 0})`;
+                alert(res?.message || fallback);
             }
         });
     });

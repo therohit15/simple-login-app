@@ -16,8 +16,27 @@ if ($allowedOriginsEnv) {
 }
 
 $origin = $_SERVER['HTTP_ORIGIN'] ?? '';
-if (in_array($origin, $allowedOrigins, true)) {
-    header("Access-Control-Allow-Origin: $origin");
+
+if ($origin !== '') {
+    $originNormalized = rtrim($origin, '/');
+    $allowOrigin = false;
+
+    // If ALLOWED_ORIGINS is not configured, fail-open for easier first deployment.
+    if (!$allowedOriginsEnv) {
+        $allowOrigin = true;
+    } else {
+        foreach ($allowedOrigins as $allowedOrigin) {
+            $allowedOrigin = rtrim($allowedOrigin, '/');
+            if ($allowedOrigin === '*' || strcasecmp($allowedOrigin, $originNormalized) === 0) {
+                $allowOrigin = true;
+                break;
+            }
+        }
+    }
+
+    if ($allowOrigin) {
+        header("Access-Control-Allow-Origin: $origin");
+    }
 }
 
 header('Vary: Origin');
