@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Authentication</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="../css/style.css?v=2">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Sora:wght@600;700&display=swap" rel="stylesheet">
+  
+</head>
+
+<body>
+
+  <div class="container-fluid min-vh-100 d-flex justify-content-center align-items-center first">
+    <div class="card auth-main-card shadow-lg ">
+      <div class="row g-0 h-100">
+
+        <!-- LEFT SECTION (1/4 Content Area) -->
+        <div class=" col-md-4 left-section p-4 ">
+          <h1 class="fw-bold mb-3">Welcome to Our Platform</h1>
+          <p class="lead">
+            Create your account to get started, manage your profile, and access all features.
+          </p>
+          <p>
+            Already have an account? Sign in to continue and update your personal information.
+          </p>
+        </div>
+
+        <!-- RIGHT SECTION (3/4 Form Area) -->
+        <div class="col-md-8 right-section d-flex justify-content-center align-items-center p-5">
+
+          <div class="form-wrapper">
+
+            <!-- Tabs -->
+            <ul class="d-flex align-items-center  justify-content-around  nav nav-tabs auth-tabs mb-4" role="tablist">
+              <li class="nav-item">
+                <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#signup" type="button">
+                  Sign Up
+                </button>
+              </li>
+              <li class="nav-item">
+                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#signin" type="button">
+                  Sign In
+                </button>
+              </li>
+            </ul>
+
+            <!-- Tab Content -->
+            <div class="tab-content auth-tab-content">
+
+              <!-- SIGN UP -->
+              <div class="tab-pane fade show active" id="signup">
+                <div class="mb-3">
+                  <label class="form-label">Name</label>
+                  <input type="text" class="form-control" id="signupName" placeholder="Enter name">
+                </div>
+
+                <div class="mb-3">
+                  <label class="form-label">Email</label>
+                  <input type="email" class="form-control" id="signupEmail" placeholder="Enter email">
+                </div>
+
+                <div class="mb-3">
+                  <label class="form-label">Password</label>
+                  <input type="password" class="form-control" id="signupPassword" placeholder="Enter password">
+                </div>
+
+                <button type="button" class="btn btn-primary w-100" id="signupBtn">
+                  Create Account
+                </button>
+              </div>
+
+              <!-- SIGN IN -->
+              <div class="tab-pane fade" id="signin">
+
+                <div class="mb-3">
+                  <label class="form-label">Email</label>
+                  <input type="email" class="form-control" id="signinEmail" placeholder="Enter email">
+                </div>
+
+                <div class="mb-3">
+                  <label class="form-label">Password</label>
+                  <input type="password" class="form-control" id="signinPassword" placeholder="Enter password">
+                </div>
+
+                <button type="button" class="btn btn-success w-100" id="signinBtn">
+                  Login
+                </button>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+  <!-- Custom JS -->
+  <script src="../js/auth.js"></script>
+
+</body>
+
+</html>

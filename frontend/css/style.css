@@ -1,0 +1,186 @@
+:root {
+  --bg-overlay: rgba(8, 12, 32, 0.45);
+  --card-light: rgba(255, 255, 255, 0.2);
+  --text-light: #ffffff;
+  --heading-color: #ff4f86;
+  --accent: #ff3d6e;
+  --accent-soft: #ffc7d6;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Manrope', sans-serif;
+}
+
+.first {
+  background-image: linear-gradient(var(--bg-overlay), var(--bg-overlay)), url("../assests/3607424.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.auth-main-card {
+  width: min(1120px, 92vw);
+  min-height: 620px;
+  border: 0;
+  border-radius: 22px;
+  overflow: hidden;
+  background: transparent;
+}
+
+.left-section,
+.right-section {
+  background: transparent;
+}
+
+.left-section {
+  color: var(--text-light);
+  background: linear-gradient(180deg, rgba(255, 78, 129, 0.82), rgba(255, 138, 174, 0.68));
+}
+
+.left-section h1 {
+  font-family: 'Sora', sans-serif;
+  font-size: clamp(1.7rem, 2.5vw, 2.35rem);
+  line-height: 1.2;
+}
+
+.left-section p {
+  font-size: clamp(0.95rem, 1.6vw, 1.05rem);
+  line-height: 1.65;
+}
+
+.right-section {
+  background: var(--card-light);
+}
+
+.form-wrapper {
+  width: min(460px, 100%);
+}
+
+.auth-tabs {
+  border-bottom: 0;
+  gap: 0.5rem;
+}
+
+.auth-tabs .nav-link {
+  border: 0;
+  color: #a61f52;
+  font-family: 'Sora', sans-serif;
+  font-weight: 600;
+  border-radius: 999px;
+  padding: 0.7rem 1.15rem;
+  transition: 0.2s ease;
+}
+
+.auth-tabs .nav-link.active {
+  color: #fff;
+  background: linear-gradient(135deg, #ff5f8a, #ff3d6e);
+  box-shadow: 0 10px 20px rgba(255, 61, 110, 0.25);
+}
+
+.auth-tab-content {
+  min-height: 430px;
+}
+
+.form-label {
+  font-family: 'Sora', sans-serif;
+  color: var(--heading-color);
+  font-size: 0.9rem;
+  margin-bottom: 0.38rem;
+}
+
+.form-control {
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid rgba(255, 132, 170, 0.35);
+  border-radius: 14px;
+  min-height: 50px;
+  font-size: 1rem;
+  padding: 0.7rem 0.95rem;
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.form-control::placeholder {
+  color: #b07890;
+}
+
+.form-control:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 0.2rem rgba(255, 61, 110, 0.2);
+  background: #fff;
+}
+
+.btn-primary,
+.btn-success {
+  border: 0;
+  border-radius: 14px;
+  min-height: 50px;
+  font-family: 'Sora', sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #ff5f8a, #ff3d6e);
+}
+
+.btn-success {
+  background: linear-gradient(135deg, #ff7fa3, #ff4f86);
+  color: #fff;
+}
+
+.btn-primary:hover,
+.btn-success:hover {
+  filter: brightness(0.97);
+}
+
+@media (max-width: 991.98px) {
+  .auth-main-card {
+    min-height: 0;
+  }
+
+  .right-section {
+    padding: 2rem !important;
+  }
+
+  .auth-tab-content {
+    min-height: 0;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .left-section {
+    text-align: center;
+    padding: 1.4rem !important;
+  }
+
+  .right-section {
+    padding: 1.25rem !important;
+  }
+
+  .form-wrapper {
+    width: 100%;
+  }
+
+  .auth-tabs {
+    justify-content: center !important;
+  }
+
+  .auth-tabs .nav-link {
+    min-width: 130px;
+  }
+}
+
+@media (max-width: 420px) {
+  .form-control,
+  .btn-primary,
+  .btn-success {
+    min-height: 47px;
+    font-size: 0.95rem;
+  }
+}

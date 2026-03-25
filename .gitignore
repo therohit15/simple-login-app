@@ -1,0 +1,13 @@
+
+
+# Dependencies
+vendor/
+/node_modules/
+
+# Logs
+*.log
+
+# OS / Editor
+.DS_Store
+.idea/
+.vscode/
