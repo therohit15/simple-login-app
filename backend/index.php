@@ -8,11 +8,13 @@ $allowedOrigins = [
     'http://localhost:5500',
     'http://127.0.0.1:5500',
     'https://profile-managements.netlify.app',
+    'https://simpledetails.netlify.app',
 ];
 
 $allowedOriginsEnv = getenv('ALLOWED_ORIGINS');
 if ($allowedOriginsEnv) {
-    $allowedOrigins = array_values(array_filter(array_map('trim', explode(',', $allowedOriginsEnv))));
+    $allowedOriginsFromEnv = array_values(array_filter(array_map('trim', explode(',', $allowedOriginsEnv))));
+    $allowedOrigins = array_values(array_unique(array_merge($allowedOrigins, $allowedOriginsFromEnv)));
 }
 
 $origin = $_SERVER['HTTP_ORIGIN'] ?? '';
