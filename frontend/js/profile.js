@@ -137,8 +137,10 @@ $(document).ready(function () {
                     alert(res.message || "Failed to save profile");
                 }
             },
-            error: function () {
-                alert("Server error while saving profile");
+            error: function (xhr) {
+                const res = xhr.responseJSON;
+                const fallback = xhr.responseText || `Server error while saving profile (HTTP ${xhr.status || 0})`;
+                alert(res?.message || fallback);
             }
         });
 
